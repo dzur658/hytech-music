@@ -2,16 +2,37 @@
 <div class="album-info">
   <div class="album-art">
     ALBUM ART
+    <div id="album_art" *ngFor="let item of album">
+        <img [src]="item.coverUrl" />
     <!-- INSERT HTML HERE -->
+    </div>
   </div>
 
   <div class="album-track-list">
     ALBUM TRACK LIST
-    <!-- INSERT HTML HERE -->
-
-    <div class="album-purchase">
-      ALBUM PURCHASE
-      <!-- INSERT HTML HERE -->
-    </div>
+    <div id="get_track_list" *ngFor="let item of album">
+    <!--<table>
+      <div *ngFor="let tracke of item.trackList">
+          <tr>
+            <td>
+              {{ tracke }}
+            </td>
+          </tr>
+      </div>
+    </table>
   </div>
+    </div>
+  -->
+  <div class="Track-list-span">Track List</div>
+  <app-track *ngFor="let song of item.trackList"
+  [songName] = "song"
+  ></app-track>
+    <div class="album-purchase" *ngFor="let item of album">
+      ALBUM PURCHASE
+      <button ng-click="item.owned = True"id="buy_button">Buy Now!</button>
+      {{ item.owned }}
+      <!-- INSERT HTML HERE -->
+  </div>
+</div>
+</div>
 </div>
