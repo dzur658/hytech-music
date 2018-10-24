@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-album-header',
@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./album-header.component.css']
 })
 export class AlbumHeaderComponent {
-
-  nowPlaying: string;
+  @Input() nowPlaying: string;
 
 }

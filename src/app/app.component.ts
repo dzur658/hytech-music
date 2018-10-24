@@ -35,6 +35,7 @@ export class AppComponent {
       ]
     }
   ];
+  currentPlayingSong: string="test";
 
 
 
